@@ -6,18 +6,18 @@ docker build -t chrisawcom/buildrom .
 # docker run -it -v $(pwd):/src chrisawcom/buildrom
 # mkdir -p /src/build
 # cd /src/build
-# repo init -u https://github.com/GrapheneOS/platform_manifest.git -b 13
+# repo init -u https://github.com/crdroidandroid/android.git -b 13.0
 # mkdir -p .repo/local_manifests
 # cp -v ../manifest.xml .repo/local_manifests/
 # repo sync -c --force-sync --no-clone-bundle --no-tags -j4
 
 # apply trebledroid patches
-# bash patches/apply_patches.sh trebledroid
+# bash ../patches/apply-patches.sh trebledroid
 
 # generate makefiles
 # pushd device/phh/treble/
-# cp -v ../../../../graphene.mk .
-# bash generate.sh graphene
+# cp -v ../../../../crDdroid.mk .
+# bash generate.sh crDroid
 # popd
 
 
