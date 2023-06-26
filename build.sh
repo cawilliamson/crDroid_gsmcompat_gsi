@@ -3,7 +3,6 @@
 docker build -t chrisawcom/buildrom . 
 
 # fetch rom sources
-
 # docker run -it -v $(pwd):/src chrisawcom/buildrom
 # mkdir -p /src/build
 # cd /src/build
@@ -13,11 +12,16 @@ docker build -t chrisawcom/buildrom .
 # repo sync -c --force-sync --no-clone-bundle --no-tags -j4
 
 # apply trebledroid patches
-
 # bash patches/apply_patches.sh trebledroid
 
-# build treble app
+# generate makefiles
+# pushd device/phh/treble/
+# cp -v ../../../../graphene.mk .
+# bash generate.sh graphene
+# popd
 
+
+# build treble app
 # pushd treble_app/
 # bash build.sh release
 # popd
@@ -25,7 +29,6 @@ docker build -t chrisawcom/buildrom .
 # cp -v treble_app/TrebleApp.apk vendor/hardware_overlay/TrebleApp/app.apk
 
 # build rom
-
 # source script/envsetup.sh
-# choosecombo release aosp_arm64 user
+# lunch treble_arm64_bvN-userdebug
 # make -j$(nproc --all) systemimage
