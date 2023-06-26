@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+<<<<<<< HEAD
 docker build -t chrisawcom/buildrom . 
+=======
+docker build -t chrisawcom/buildrom .
+>>>>>>> 6ff9c0e (Remove unused patches and tidy up manifest)
 
 # fetch rom sources
 
